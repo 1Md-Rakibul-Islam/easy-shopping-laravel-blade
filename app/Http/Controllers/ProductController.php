@@ -10,10 +10,20 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+    $data = Product::all();
+
+        return view('pages.product.products', compact('data'));
     }
+
+    //     function index(Request $request) {
+
+    //     $data = User::all();
+
+    //     return view('home', compact('data'));
+    // }
 
     /**
      * Show the form for creating a new resource.
