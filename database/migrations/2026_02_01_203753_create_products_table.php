@@ -36,7 +36,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
 
             // Relations (future use)
-            $table->unsignedBigInteger('category_id')->nullable();
+            // $table->unsignedBigInteger('category_id')->nullable();
 
             $table->timestamps();
         });

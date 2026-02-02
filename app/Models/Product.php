@@ -21,7 +21,7 @@ class Product extends Model
         'sku',
         'image',
         'is_active',
-        'category_id',
+        // 'category_id',
     ];
 
     protected $casts = [
@@ -37,8 +37,8 @@ class Product extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function category() {
-        return $this->belongsTo(Category::class);
-    }
+    // public function category() {
+    //     return $this->belongsTo(Category::class);
+    // }
 
 }
