@@ -18,13 +18,6 @@ class ProductController extends Controller
         return view('pages.product.products', compact('data'));
     }
 
-    //     function index(Request $request) {
-
-    //     $data = User::all();
-
-    //     return view('home', compact('data'));
-    // }
-
     /**
      * Show the form for creating a new resource.
      */

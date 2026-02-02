@@ -4,6 +4,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <h1 class="text-2xl font-bold">Dashboard Overview</h1>
-    <p>Welcome to your dashboard</p>
+    <h1>Dashboard Overview</h1>
+
+    <div class="grid grid-cols-4 gap-4">
+        <div>Products: {{ $totalProducts ?? "0" }}</div>
+        <div>Users: {{ $totalUsers ?? "0" }}</div>
+    </div>
 @endsection

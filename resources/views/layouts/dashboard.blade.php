@@ -37,6 +37,12 @@
                         Dashboard
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('dashboard.index') }}"
+                        class="block px-3 py-2 rounded hover:bg-gray-700 transition">
+                        Products
+                    </a>
+                </li>
             </ul>
         </aside>
 
