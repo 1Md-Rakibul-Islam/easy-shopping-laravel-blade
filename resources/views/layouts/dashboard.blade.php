@@ -19,48 +19,35 @@
     @yield('styles')
 </head>
 
-<body>
-    <div class="dashboard-wrapper">
-        {{-- User Navbar --}}
-        @include('partials.dashboard.navbar')
+<body class="bg-gray-100 font-sans">
 
-        {{-- User Content --}}
-        <div class="flex min-h-screen mt-20 px-5">
+    {{-- Top Navbar --}}
+    @include('partials.topbar')
 
-            {{-- Sidebar --}}
-            <aside class="w-64 bg-gray-800 text-white p-4">
-                <h2 class="text-xl font-bold mb-4">Admin Panel</h2>
+    <div class="flex">
 
-                <ul class="space-y-2">
-                    <li>
-                        <a href="{{ route('dashboard') }}">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('products.create') }}">Product Add</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('products.index') }}">Product List</a>
-                    </li>
-                    {{-- <li>
-                        <a href="{{ route('users.index') }}">Users List</a>
-                    </li> --}}
-                </ul>
-            </aside>
+        {{-- Sidebar --}}
+        <aside class="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-gray-900 text-white p-5 overflow-y-auto">
+            <h2 class="text-xl font-bold mb-6">Admin Panel</h2>
 
-            {{-- Main Area --}}
-            <div class="flex-1">
-                {{-- Navbar --}}
-                <header class="bg-white shadow p-4">
-                    Dashboard Navbar
-                </header>
+            <ul class="space-y-3">
+                <li>
+                    <a href="{{ route('dashboard.index') }}"
+                        class="block px-3 py-2 rounded hover:bg-gray-700 transition">
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+        </aside>
 
-                {{-- Content --}}
-                <main class="p-6">
-                    @yield('content')
-                </main>
-            </div>
-        </div>
+        {{-- Main Content --}}
+        <main class="ml-64 mt-16 p-6 w-full min-h-[calc(100vh-4rem)] overflow-x-hidden">
+            @yield('content')
+        </main>
+
     </div>
+
+    @yield('scripts')
 </body>
 
 @yield('scripts')
