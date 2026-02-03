@@ -36,7 +36,7 @@ class StoreProductRequest extends FormRequest
 
             'in_stock' => 'required|boolean',
 
-            'sku' => 'required|string|max:100|unique:products,sku',
+            'sku' => 'required|nullable|string|max:100|unique:products,sku',
 
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 

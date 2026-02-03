@@ -20,7 +20,7 @@
                 <thead class="text-sm text-body">
                     <tr>
                         <th scope="col" class="px-6 py-3 font-medium">
-                            Id
+                            Sl
                         </th>
                         <th scope="col" class="px-6 py-3 font-medium">
                             Product name
@@ -55,7 +55,7 @@
                     @foreach ($products as $product)
                         <tr class="hover:bg-gray-50 duration-300">
                             <td>
-                                {{ $product->id ?? '' }}
+                                {{ 1 }}
                             </td>
                             <td>
                                 <div class="flex items-center space-x-3">
