@@ -33,7 +33,17 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        Product::create($request->validated());
+
+        $data = $request->validated();
+
+        // Handle image upload
+        if($request->hasFile('image')) {
+            // Store image in public/products directory
+            $imagePath = request()->file('image')->store('products', 'public');
+            $data['image'] = $imagePath;
+        }
+
+        Product::create($data);
 
         return redirect()
         ->route('dashboard.products.index')

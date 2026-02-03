@@ -58,9 +58,21 @@
                                 {{ $product->id ?? '' }}
                             </td>
                             <td>
-                                <div>
-                                    <img class="h-12 w-12 rounded-full" src="{{ $product->image }}" alt="product image">
-                                    {{ $product->name ?? '' }}
+                                <div class="flex items-center space-x-3">
+                                    @if ($product->image)
+                                        <!-- Proper way to display image from storage -->
+                                        <img class="h-12 w-12 object-cover rounded"
+                                            src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}">
+                                    @else
+                                        <!-- Default image if no image uploaded -->
+                                        <div class="h-12 w-12 bg-gray-200 rounded flex items-center justify-center">
+                                            <span class="text-gray-500">No Image</span>
+                                        </div>
+                                    @endif
+                                    <div>
+                                        <div class="font-medium">{{ $product->name }}</div>
+                                        <div class="text-sm text-gray-500">{{ $product->sku }}</div>
+                                    </div>
                                 </div>
                             </td>
                             <td>
